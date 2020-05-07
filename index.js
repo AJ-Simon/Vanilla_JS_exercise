@@ -86,10 +86,63 @@ window.addEventListener("resize",handleResize); */
 //두개의 차이점은 사건발생 후 동작하느냐, 자동적으로 즉각 동작하느냐 차이
 
 
-const title1 = document.querySelector("#title");
+/* const title = document.querySelector("#title");
 
-function handleclick(){
-    title1.style.color = "blue";
+const BASE_COLOR = "#34495e";
+const OTHER_COLOR = "#ce2bdd";
+
+function handleClick(){
+    const currentColor = title.style.color;
+    if (currentColor === BASE_COLOR){
+        title.style.color = OTHER_COLOR;
+    } 
+    console.log(title.style.color);
+    }
+
+function init(){
+
+    title.style.color = BASE_COLOR;
+    title.addEventListener("click",handleClick);
 }
 
-window.addEventListener("click",handleclick);
+init();
+ */
+
+// &&은 그리고를 의미
+// || 또는 을 의미
+
+
+/* const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleCilck() {
+    const hasClass = title.classList.contains(CLICKED_CLASS);
+    if(hasClass){
+        title.classList.remove(CLICKED_CLASS);
+    }   else {
+        title.classList.add(CLICKED_CLASS);
+    }
+}
+
+function init() {
+    title.addEventListener("click", handleCilck);
+}
+init(); */
+
+const title = document.querySelector("#title");
+//title이라는 class를 받찾아 title이라는 객체로 변환
+
+const CLICKED_CLASS = "clicked";
+
+function handleCilck() {
+    title.classList.toggle(CLICKED_CLASS);
+}
+
+function init() {
+    title.addEventListener("click", handleCilck);
+} //click 하면 handleclick 이라는 함수 실행할 수 있는 함수
+init(); //함수 실행
+
+//위의 방법과 같이 toggle을 사용하면 됨
+//toggle의 class가 있는지 확인하여 있으면 remove 없으면 add
